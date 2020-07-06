@@ -11,6 +11,10 @@ export class FormularioService {
 
   constructor(private http: HttpClient) {   }
 
+  listar(){
+    return this.http.get<any[]>(`${this.url}`);
+  }
+  
   criar(contatos: any){
     return this.http.post(this.url, contatos);
   }

@@ -1,5 +1,4 @@
-import { ReactiveFormsModule } from '@angular/forms';
-import { from } from 'rxjs';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -19,7 +18,8 @@ import { FormularioService } from './formulario.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [FormularioService],
   bootstrap: [AppComponent]

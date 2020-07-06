@@ -1,36 +1,36 @@
 <main role="main">
-     
-    <section>
-      <div class="container">
-        <form method="post" [formGroup]="formulario" (ngSubmit)="criar()">
-          
-          <div class="form-group">
-            <label for="nome">Nome*</label>
-            <input type="text" id="nome" name="nome"
-              class="form-control" placeholder="Nome"
-               formControlName="nome"/>
-          </div>
+  <section>
+    <div class="container">
+      <form method="POST" [formGroup]="formulario" (ngSubmit)="criar()">
+        
+        <div class="form-group">
+          <label for="nome">Nome*</label>
+          <input type="text" id="nome" name="nome"
+            class="form-control" placeholder="Nome"
+            formControlName="nome"/>
+        </div>
 
-          <div class="form-group">
-            <label for="fone">Telefone*</label>
-            <input type="text" id="fone" name="fone"
-              class="form-control" placeholder="Nº Telefone"
-              formControlName="fone"/>
-          </div>  
-  
-          <div class="form-group">
-            <label for="email">E-mail*</label>
-            <input type="email" id="email" name="email"
-              class="form-control" placeholder="Digite seu E-mail"
-              formControlName="email"/>
-          </div>
+        <div class="form-group">
+          <label for="fone">Telefone*</label>
+          <input type="number" id="fone" name="fone"
+            class="form-control" placeholder="Nº Telefone"
+            formControlName="fone"/>
+        </div>  
 
-          <button type="submit" class="btn btn-primary"
-          [disabled]="formulario.invalid">Salvar</button>
+        <div class="form-group">
+          <label for="email">E-mail*</label>
+          <input type="email" id="email" name="email"
+            class="form-control" placeholder="Digite seu E-mail"
+            formControlName="email" />
+        </div>
 
-        </form>
-      </div>
-    </section>
+        <button type="submit" class="btn btn-primary"
+        [disabled]="formulario.invalid">Salvar</button>
+
+      </form>
+    </div>
+  </section>
+    
   
     <section class="mt-5">
       <div class="container">
@@ -51,16 +51,16 @@
             </thead>
   
             <tbody>
-              <tr>
-                <td class="text-center w-25"></td>
+              <tr *ngFor="let c of contatos">
+                <td class="text-center w-25">{{c.id_ag}}</td>
   
-                <td></td>
+                <td>{{c.nome}}</td>
   
-                <td></td>
+                <td>{{c.email}}</td>
 
-                <td></td>
+                <td>{{c.fone}}</td>
 
-                <td></td>
+                <td>{{c.favoritos}}</td>
               </tr>
             </tbody>
           </table>
